@@ -5,7 +5,9 @@ import {Router, Route, hashHistory, IndexRoute} from 'react-router'
 /*container and components*/
 import App from '../containers'
 import Login from '../containers/Login'
+import SignUp from '../containers/SignUp'
 import TodoPage from '../containers/TodoPage'
+
 
 class RouterMap extends React.Component {
     render() {
@@ -13,6 +15,7 @@ class RouterMap extends React.Component {
             <Router history={hashHistory}>
                 <Route path='/' component={App}>
                     <Route path='/login' component={Login} />
+                    <Route path='/signup' component={SignUp} />
                     <Route path='/todo' component={TodoPage} />
                 </Route>
             </Router>

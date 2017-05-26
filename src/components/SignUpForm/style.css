@@ -1,4 +1,4 @@
-#login-form-container {
+#sign-form-container {
     width: 430px;
     margin: 0 auto;
     margin-top: 60px;
@@ -9,12 +9,13 @@
     padding: 2em;
 }
 
-#login-form-container>div>p{
+
+#sign-form-container>div>p{
     color: rgba(0,0,0,0.44);
     margin: 15px 0 10px 0;
 }
 
-#login-form-container>div>input {
+#sign-form-container>div>input {
     color: #686868;
     padding-left: 1em;
     border: 1px solid #ccc;
@@ -28,10 +29,10 @@ input::-webkit-input-placeholder{
 }
 
 #submit {
-    padding: 1.5rem 0;
+    padding: 1.5rem 0 0 0;
     font-size: 14px;
 }
-#submit .btn-login{
+#submit .btn-signup{
     display: inline-block;
     width: 6rem;
     height: 3rem;
@@ -46,9 +47,6 @@ input::-webkit-input-placeholder{
     height: 3rem;
     line-height: 3rem;
 }
-#submit .link-signup {
+#submit .link-login {
     color: #b488dd;
-}
-#submit a{
-    text-decoration: none;
 }
