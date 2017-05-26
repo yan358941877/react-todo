@@ -1,0 +1,23 @@
+#sign-title{
+    width: 100%;
+    height: 20%;
+    position: relative;
+}
+
+#title-content {
+    color: rgba(0,0,0,0.6);
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+#title-content span{
+    display: inline-block;
+    font-size: 24px;
+    margin: 0 1rem;
+    color: #f9f9f9;
+}
