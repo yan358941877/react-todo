@@ -14,13 +14,14 @@ import LoginForm from '../../components/LoginForm'
 import * as userinfo_actionCreator from '../../actions/userinfo'
 /*leanCloud*/
 import saveTestObject from '../../leancloud/saveTestObject'
-import lclogin from '../../leancloud/lclogin'
+import lcLogin from '../../leancloud/lcLogin'
 
 class Login extends React.Component{
 
     // 当用户提交Login表单时的处理
+/**----------------------------------------------------------------------------------- */
     handleSubmit(username, password){
-        lclogin(username, password)
+        lcLogin(username, password)
     }
 
     // 当用户信息验证成功时
