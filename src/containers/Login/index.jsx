@@ -8,7 +8,12 @@ import './style.css'
 import SignTitle from '../../components/SignTitle'
 import LoginForm from '../../components/LoginForm'
 
+/*leanCloud*/
+import saveTestObject from '../../leancloud/saveTestObject'
+import lclogin from '../../leancloud/lclogin'
+
 class Login extends React.Component{
+
     render(){
         return(
             <div id="login-page">

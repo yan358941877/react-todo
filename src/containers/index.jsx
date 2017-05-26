@@ -8,11 +8,14 @@ import {bindActionCreators} from 'redux'
 import * as userinfo_actionCreator from '../actions/userinfo'
 /*style*/
 import './style.css'
+/*LeanCloud*/
+import initLeanCloud from '../leancloud/initLeanCloud'
 
 class App extends React.Component {
 
     // 当最外层组件加载完毕之前，在localStorage中查找是否有用户名，如果有进入todo应用，否则进入登录页面
     componentWillMount(){
+        initLeanCloud()
         const username = localStorage.getItem('username')
         const userID = localStorage.getItem('userID')
         if(!username||!userID){
