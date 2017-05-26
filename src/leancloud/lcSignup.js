@@ -8,8 +8,8 @@ function lcSignup(username, password, email, handleSignupSuccess) {
     user.setPassword(password)
     user.setEmail(email)
     user.signUp().then(function (userinfo) {
-        console.log(userinfo.attributes.username)
-        console.log(userinfo.attributes.user_id)
+        // console.log(userinfo.attributes.username)
+        // console.log(userinfo.attributes.user_id)
         const username = userinfo.attributes.username
         const userID = userinfo.attributes.user_id
         handleSignupSuccess(username, userID)

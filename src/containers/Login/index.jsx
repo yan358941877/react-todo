@@ -21,7 +21,8 @@ class Login extends React.Component{
     // 当用户提交Login表单时的处理
 /**----------------------------------------------------------------------------------- */
     handleSubmit(username, password){
-        lcLogin(username, password)
+        const handleLoginSuccess = this.handleLoginSuccess.bind(this)
+        lcLogin(username, password, handleLoginSuccess)
     }
 
     // 当用户信息验证成功时
