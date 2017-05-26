@@ -1,19 +1,21 @@
 import React from 'react'
-import {hashHistory} from 'react-router'
+import { hashHistory } from 'react-router'
 import './style.css'
 
-class App extends React.Component{
+class App extends React.Component {
 
 
-    render(){
+    render() {
         return (
-            <div>
-                <h1>hello react</h1>
-                {
-                    this.props.children
-                }
+            <div id='app'>
+                <div id='container'>
+                    {
+                        this.props.children
+                    }
+                </div>
+
             </div>
-            
+
         )
     }
 }

@@ -1,0 +1,17 @@
+#app {
+    width: 100vw;
+    height: 100vh;
+    background-color: #eaeae8;
+    position: relative;
+}
+#container {
+    width: 900px;
+    height: 700px;
+    background-color:#373c4f;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    box-shadow: 0px 20px 40px #888888;
+}
