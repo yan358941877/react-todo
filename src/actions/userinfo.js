@@ -1,4 +1,4 @@
-import * as actionTypes from '../constants/userinf0'
+import * as actionTypes from '../constants/userinfo'
 
 export function updateUser(data){
     return {
