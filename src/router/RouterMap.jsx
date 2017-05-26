@@ -1,6 +1,6 @@
 /*module*/
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import {Router, Route, hashHistory, IndexRoute} from 'react-router'
 
 /*container and components*/
 import App from '../containers'
@@ -10,11 +10,11 @@ import TodoPage from '../containers/TodoPage'
 class RouterMap extends React.Component {
     render() {
         return (
-            <Router>
-                <App>
+            <Router history={hashHistory}>
+                <Route path='/' component={App}>
                     <Route path='/login' component={Login} />
                     <Route path='/todo' component={TodoPage} />
-                </App>
+                </Route>
             </Router>
         )
     }
