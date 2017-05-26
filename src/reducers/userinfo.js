@@ -7,7 +7,7 @@ export default function(state=initState, action){
         case actionTypes.USER_UPDATE:
             return {
                 ...state, 
-                usernaem: action.data.username,
+                username: action.data.username,
                 userID: action.data.userID
             }
         default:
