@@ -12,7 +12,7 @@ class RouterMap extends React.Component {
         return (
             <Router history={hashHistory}>
                 <Route path='/' component={App}>
-                    <IndexRoute path='/login' component={Login} />
+                    <IndexRoute component={Login} />
                     <Route path='/todo' component={TodoPage} />
                 </Route>
             </Router>
