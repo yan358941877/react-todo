@@ -13,6 +13,7 @@
 
 .calendar-item .thismonth {
     color: #b389dd;
+    cursor: pointer;
 }
 .calendar-item .thismonth.today {
     background-color: #b488dd;

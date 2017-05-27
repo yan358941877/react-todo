@@ -15,17 +15,18 @@ class Calendar extends React.Component {
         }
     }
     componentWillMount() {
-        const year = this.props.year
-        const month = this.props.month
-        const day = this.props.day
-        const week = this.props.week
+        const date = this.props.date
+        const year = date.year
+        const month = date.month
+        const day = date.day
+        const week = date.week
         this.calculateDateArray(year, month, day, week)
     }
     componentWillReceiveProps(nextProps) {
-        const year = nextProps.year
-        const month = nextProps.month
-        const day = nextProps.day
-        const week = nextProps.week
+        const year = nextProps.date.year
+        const month = nextProps.date.month
+        const day = nextProps.date.day
+        const week = nextProps.date.week
         this.calculateDateArray(year, month, day, week)
     }
     calculateDateArray(year, month, day, week) {
@@ -55,8 +56,11 @@ class Calendar extends React.Component {
         for (let i = 1; i <= thisMonthDays; i++) {
             dateArray.push(i)
         }
-        if (dateArray.length % 7 !== 0) {
-            let nextMonthDays = 7 - dateArray.length % 7
+
+        let totalDateLength = last_dateArray.length + dateArray.length
+
+        if (totalDateLength % 7 !== 0) {
+            let nextMonthDays = 7 - totalDateLength % 7
             for (let i = 1; i <= nextMonthDays; i++) {
                 next_dateArray.push(i)
             }
@@ -65,6 +69,7 @@ class Calendar extends React.Component {
             last_dateArray, dateArray, next_dateArray
         })
     }
+
     render() {
         return (
             <div id="calendar">
@@ -85,12 +90,17 @@ class Calendar extends React.Component {
                     }
                     {
                         this.state.dateArray.map((item, index) => {
-                            return <CalendarItem key={index} item={item} classname='thismonth'/>
+                            return <CalendarItem 
+                                key={index} 
+                                item={item} 
+                                date={this.props.date}
+                                classname='thismonth'
+                                changeDate={this.props.changeDate}/>
                         })
                     }
                     {
                         this.state.next_dateArray.map((item, index) => {
-                            return <CalendarItem key={index} item={item} classname='nextmonth'/>
+                            return <CalendarItem key={index} item={item}  classname='nextmonth'/>
                         })
                     }
                 </ul>

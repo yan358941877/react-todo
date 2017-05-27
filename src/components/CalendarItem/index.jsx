@@ -1,15 +1,27 @@
 import React from 'react'
 import './style.css'
 
-class CalendarItem extends React.PureComponent{
+class CalendarItem extends React.Component{
+    constructor(props){
+        super(props)
+    }
+    handleChangeDate(){
+        const newDate = this.props.item
+        if(this.props.changeDate){
+            this.props.changeDate(newDate)
+        }
+    }
     render(){
-        const date = new Date()
         let classname = this.props.classname
-    
+        if(this.props.date && this.props.date.day == this.props.item){
+            classname += ' today'
+        }
+        
         return (
             <div className="calendar-item">
                 <div 
-                    className={this.props.item==date.getDate()?'today '+classname: classname}>
+                    className={classname}
+                    onClick={this.handleChangeDate.bind(this)}>
 
                     {this.props.item}
                 </div>

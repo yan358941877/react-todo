@@ -40,6 +40,18 @@ class CalendarPart extends React.Component{
             year, month,day,week
         })
     }
+    changeDate(date){
+        this.date.setDate(date)
+
+        const year = this.date.getFullYear()
+        const month = this.date.getMonth()+1
+        const day = this.date.getDate()
+        const week = this.date.getDay()
+        
+        this.setState({
+            year, month,day,week
+        })
+    }
     render(){
         
         const year = this.state.year
@@ -58,10 +70,9 @@ class CalendarPart extends React.Component{
                         previousMonth={this.previousMonth.bind(this)}
                         nextMonth={this.nextMonth.bind(this)}/>
                     <Calendar 
-                        year={year}
-                        month={month}
-                        day={day}
-                        week={week}/>
+                        date={{year,month,day,week}}
+                        changeDate={this.changeDate.bind(this)}
+                        />
                 </div>
                 
             </div>
