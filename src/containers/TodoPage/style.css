@@ -7,6 +7,7 @@
 #todo-container {
     width: 900px;
     height: 700px;
+    padding: 1rem 0 1rem 1rem;
     background-color:#373c4f;
     position: absolute;
     top: 50%;
@@ -14,4 +15,17 @@
     transform: translate(-50%,-50%);
     border-radius: 10px;
     box-shadow: 0px 20px 40px #888888;
+}
+
+#todo-left {
+    width: 60%;
+    height: 100%;
+    background: #f9f9f9;
+    overflow: hidden;
+}
+#todo-right {
+    width: 40%;
+    height: 100%;
+    background: yellow;
+    overflow: hidden;
 }
