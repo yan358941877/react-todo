@@ -1,0 +1,40 @@
+#calendar-part {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#calendar-part .layer {
+    border-radius: 6px;
+    font-size: 12px;
+}
+#calendar-part .layer01 {
+    width: 100%;
+    background: #9598a1;
+    position: absolute;
+    top: 2em;
+    bottom: 2em;
+    border-radius: 6px; 
+}
+
+#calendar-part .layer02{
+    background:#d0d1d5;
+    position: absolute;
+    left: 0;
+    right: 1em;
+    top: 1em;
+    bottom: 1em;
+    border-radius: 6px;
+}
+
+#calendar-part .layer03{
+    background:#f9f9f9;
+    position: absolute;
+    left: 0;
+    right: 2em;
+    top: 0;
+    bottom: 0;
+    border-radius: 6px;
+
+    padding: 2em;
+}

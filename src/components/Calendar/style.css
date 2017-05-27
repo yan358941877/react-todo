@@ -1,0 +1,27 @@
+#calendar li{
+    list-style: none;
+    float: left;
+    box-sizing: border-box;
+    width: 14.2857%;
+    font-size: 14px;
+    text-align: center;
+    color: #a4adbe;
+}
+
+#calendar-title li{
+    color: #757c98;
+    font-weight: bold;
+}
+#calendar-day {
+    border-left: 1px solid #ededed;
+    border-top: 1px solid #ededed;
+    margin-top: 20px;
+    
+}
+#calendar-day li {
+    border-right:1px solid #ededed;
+    border-bottom:1px solid #ededed;
+    height: 70px;
+    line-height: 70px;
+    color:#dadada; /* #b389dd */
+}

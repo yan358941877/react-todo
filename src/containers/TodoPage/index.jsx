@@ -13,7 +13,7 @@ class TodoPage extends React.Component{
             <div id="todo-page">
                 <div id="todo-container" className="clear-fix">
                     <div id="todo-left" className="float-left">
-                        {/*<CalendarPart />*/}
+                        <CalendarPart />
                     </div>
                     <div id="todo-right" className="float-left">
                         {/*<TodoPart />*/}
