@@ -1,7 +1,70 @@
 import React from 'react'
 import './style.css'
 
-class Calendar extends React.PureComponent {
+import firstDayOfMonth from '../../utils/firstDayOfMonth'
+import daysOfMonth from '../../utils/daysOfMonth'
+import CalendarItem from '../CalendarItem'
+
+class Calendar extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            last_dateArray: [],
+            dateArray : [],
+            next_dateArray: []
+        }
+    }
+    componentWillMount(){
+        const year = this.props.year
+        const month = this.props.month
+        const day = this.props.day
+        const week = this.props.week
+        this.calculateDateArray(year, month, day, week)
+    }
+    componentWillReceiveProps(nextProps){
+        const year = nextProps.year
+        const month = nextProps.month
+        const day = nextProps.day
+        const week = nextProps.week
+        this.calculateDateArray(year, month, day, week)
+    }
+    calculateDateArray(year, month, day, week){
+        // 计算本月第一天是周几
+        // const year = this.props.year
+        // const month = this.props.month
+        // const day = this.props.day
+        // const week = this.props.week
+
+        // 本月第一天是周几
+        let firstDay = firstDayOfMonth(day,week)
+       
+        // 上个月有多少天
+        let lastMonthDays = daysOfMonth(year, month-1)
+
+        // 这个月有多少天
+        let thisMonthDays = daysOfMonth(year, month)
+
+        // 存放本次渲染所需显示的天数
+        let dateArray = []
+        let last_dateArray = []
+        let next_dateArray = []
+        
+        for(let i=lastMonthDays-(firstDay-1)+1; i<=lastMonthDays; i++){
+            last_dateArray.push(i)
+        }
+        for(let i=1;i<=thisMonthDays;i++){
+            dateArray.push(i)
+        }
+        if(dateArray.length%7!==0){
+            let nextMonthDays = 7 - dateArray.length%7 
+            for(let i=1; i<=nextMonthDays;i++){
+                next_dateArray.push(i)
+            }
+        }
+        this.setState({
+            last_dateArray,dateArray,next_dateArray
+        })
+    }
     render() {
         return (
             <div id="calendar">
@@ -15,48 +78,21 @@ class Calendar extends React.PureComponent {
                     <li>SAT</li>
                 </ul>
                 <ul id="calendar-day" className="clear-fix">
-                    <li>29</li>
-                    <li>30</li>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
-                    <li>6</li>
-                    <li>7</li>
-                    <li>8</li>
-                    <li>9</li>
-                    <li>10</li>
-                    <li>11</li>
-                    <li>12</li>
-                    <li>13</li>
-                    <li>14</li>
-                    <li className="today">15</li>
-                    <li>16</li>
-                    <li>17</li>
-                    <li>18</li>
-                    <li>19</li>
-                    <li>20</li>
-                    <li>21</li>
-                    <li>22</li>
-                    <li>23</li>
-                    <li>24</li>
-                    <li>25</li>
-                    <li>26</li>
-                    <li>27</li>
-                    <li>28</li>
-                    <li>29</li>
-                    <li>30</li>
-                    <li>31</li>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
-                    <li>6</li>
-                    <li>6</li>
-                    <li>7</li>
-                    <li>9</li>
+                    {
+                        this.state.last_dateArray.map((item,index)=>{
+                            return <li key={index}>{item}</li>
+                        })
+                    }
+                    {
+                        this.state.dateArray.map((item,index)=>{
+                            return <li key={index}>{item}</li>
+                        })
+                    }
+                    {
+                        this.state.next_dateArray.map((item,index)=>{
+                            return <li key={index}>{item}</li>
+                        })
+                    }
                 </ul>
             </div>
         )

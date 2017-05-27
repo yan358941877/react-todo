@@ -21,8 +21,8 @@
 #calendar-day li {
     border-right:1px solid #ededed;
     border-bottom:1px solid #ededed;
-    height: 70px;
-    line-height: 70px;
+    height: 75px;
+    line-height: 75px;
     color:#dadada; /* #b389dd */
 }
 

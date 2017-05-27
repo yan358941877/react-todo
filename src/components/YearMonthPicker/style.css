@@ -7,6 +7,7 @@
     display: inline-block;
     border: 0.5rem solid transparent;
     border-right: 0.5rem solid#707e99;  
+    cursor: pointer;
 }
 #yearmonth-picker > .month-year {
     display: inline-block;
@@ -18,4 +19,5 @@
     display: inline-block;
     border: 0.5rem solid transparent;
     border-left: 0.5rem solid #707e99;  
+    cursor: pointer;
 }
