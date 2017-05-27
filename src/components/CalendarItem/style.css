@@ -1,0 +1,23 @@
+.calendar-item {
+    float: left;
+    box-sizing: border-box;
+    width: 14.2857%;
+    font-size: 14px;
+    text-align: center;
+    border-right:1px solid #ededed;
+    border-bottom:1px solid #ededed;
+    height: 75px;
+    line-height: 75px;
+    color:#dadada; /* #b389dd */
+}
+
+.calendar-item .thismonth {
+    color: #b389dd;
+}
+.calendar-item .thismonth.today {
+    background-color: #b488dd;
+    box-shadow: 0px 3px 3px #888;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+}
