@@ -31,7 +31,7 @@ class Calendar extends React.PureComponent {
                     <li>12</li>
                     <li>13</li>
                     <li>14</li>
-                    <li>15</li>
+                    <li className="today">15</li>
                     <li>16</li>
                     <li>17</li>
                     <li>18</li>

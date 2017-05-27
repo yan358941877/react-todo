@@ -25,3 +25,11 @@
     line-height: 70px;
     color:#dadada; /* #b389dd */
 }
+
+#calendar-day li.thismonth{
+    color: #b389dd;
+}
+#calendar-day li.today {
+    background-color: #b488dd;
+    color: #fff;
+}
