@@ -112,6 +112,7 @@ class CalendarPart extends React.Component {
                         date={{ year, month, day, week }}
                         changeDate={this.changeDate.bind(this)}
                         records = {this.state.records}
+                        checkedDate = {this.props.checkedDate}
                     />
                 </div>
 
@@ -122,7 +123,9 @@ class CalendarPart extends React.Component {
 
 // 这个组件负责修改 checkedDate
 const mapStateToProps = (state) => {
-    return {}
+    return {
+        checkedDate: state.dateinfo
+    }
 }
 const mapDispatchToProps = (dispatch) => {
     return {

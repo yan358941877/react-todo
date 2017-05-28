@@ -69,9 +69,22 @@ class Calendar extends React.Component {
             last_dateArray, dateArray, next_dateArray
         })
     }
-
+    
+    // 判断当前月份是否和redux中存放的dateinfo一致，如果不一致，则不显示 “选中” 的特殊样式，
+    isSameWithCheckedDate(){
+        // 页面上显示的Date
+        const showPageDate = this.props.date
+        // redux中存放的checkedDate
+        const checkedDate = this.props.checkedDate
+        if(showPageDate.year === checkedDate.year && showPageDate.month === checkedDate.month){
+            return true
+        }else {
+            return false
+        }
+    }
     render() {
         const records = this.props.records
+        
         return (
             <div id="calendar">
                 <ul id="calendar-title" className="clear-fix">
@@ -97,7 +110,9 @@ class Calendar extends React.Component {
                                 date={this.props.date}
                                 classname='thismonth'
                                 changeDate={this.props.changeDate}
-                                hasRecord={records[index+1]}/>
+                                hasRecord={records[index+1]}
+                                isCheckedDate={this.isSameWithCheckedDate()}
+                                />
                         })
                     }
                     {

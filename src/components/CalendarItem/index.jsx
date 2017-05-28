@@ -13,7 +13,7 @@ class CalendarItem extends React.Component{
     }
     render(){
         let classname = this.props.classname
-        if(this.props.date && this.props.date.day == this.props.item){
+        if(this.props.date && this.props.date.day == this.props.item && this.props.isCheckedDate) {
             classname += ' today'
         }
         
