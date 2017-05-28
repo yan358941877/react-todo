@@ -1,10 +1,20 @@
+/* module */
 import React from 'react'
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+
+/*style*/
 import './calendar.css'
 
+/* components*/
 import YearMonthPicker from '../../../components/YearMonthPicker'
 import Calendar from '../../../components/Calendar'
 
+/* Server method */
 import queryMonthRecord from '../../../leancloud/queryMonthRecord'
+
+/* actionCreator */
+import * as dateinfo_actionCreator from '../../../actions/dateinfo'
 
 class CalendarPart extends React.Component {
     constructor(props) {
@@ -73,7 +83,9 @@ class CalendarPart extends React.Component {
         const week = this.date.getDay()
 
         // 对redux中的state进行操作
-
+        this.props.dateinfo_operate.updateCheckedDate({
+            year, month, day
+        })
         // 更新自己的state
         this.setState({
             year, month, day, week
@@ -114,7 +126,9 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-
+        dateinfo_operate: bindActionCreators(dateinfo_actionCreator, dispatch)
     }
 }
+
+CalendarPart = connect(mapStateToProps, mapDispatchToProps)(CalendarPart)
 export default CalendarPart 
