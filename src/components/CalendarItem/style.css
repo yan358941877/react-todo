@@ -9,6 +9,7 @@
     height: 75px;
     line-height: 75px;
     color:#dadada; /* #b389dd */
+    position: relative;
 }
 
 .calendar-item .thismonth {
@@ -21,4 +22,18 @@
     font-size: 18px;
     font-weight: bold;
     color: #fff;
+}
+
+.calendar-item .record {
+    width: 80%;
+    height: 5px;
+    border-radius: 3px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+    background-color: #b389dd;
+}
+.calendar-item .thismonth.today .record {
+    background-color: #fff;
 }

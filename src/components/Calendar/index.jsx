@@ -71,6 +71,7 @@ class Calendar extends React.Component {
     }
 
     render() {
+        const records = this.props.records
         return (
             <div id="calendar">
                 <ul id="calendar-title" className="clear-fix">
@@ -95,7 +96,8 @@ class Calendar extends React.Component {
                                 item={item} 
                                 date={this.props.date}
                                 classname='thismonth'
-                                changeDate={this.props.changeDate}/>
+                                changeDate={this.props.changeDate}
+                                hasRecord={records[index+1]}/>
                         })
                     }
                     {

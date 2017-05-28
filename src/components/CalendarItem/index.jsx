@@ -24,6 +24,11 @@ class CalendarItem extends React.Component{
                     onClick={this.handleChangeDate.bind(this)}>
 
                     {this.props.item}
+                    {
+                        this.props.hasRecord
+                        ? <div className='record' />
+                        : ''
+                    }
                 </div>
             </div>
         )
