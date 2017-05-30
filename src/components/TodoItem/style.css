@@ -1,0 +1,75 @@
+.todo-item{
+    color: #d7d8dd;
+    font-size: 18px;
+    height: 80px;
+    width: 100%;
+    position: relative;
+}
+
+.todo-item.important {
+    background-image:linear-gradient(to right,#866cab,#454660);
+}
+.even {
+    background-image:linear-gradient(to right,#3d4457,#373c4f);
+}
+
+.todo-item >input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #fff;
+    display: inline-block;
+    width: 80%;
+    margin: 0 0;
+    margin-left: px;
+    padding-top: 20px;
+}
+.todo-item > i {
+    /*display: inline-block;
+    font-size: 24px;
+    margin: 0 10px;
+    color: #888;
+    vertical-align: bottom;
+    cursor: pointer;*/
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    
+    border: 2px solid #fff;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.todo-item >i.finish {
+    background: #fff;
+}
+
+
+.todo-item .todo-operate{
+    margin-top: 10px;
+    padding: 0px 20px;
+    text-align: right;
+}
+.todo-operate i {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.todo-operate i.important {
+    color: yellow;
+}
+.todo-operate>input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #fff;
+    display: inline-block;
+    width: 50%;
+    margin-right: 115px;
+    font-size: 14px;
+    position: absolute;
+    bottom: 10px;
+    left: 32px;
+}

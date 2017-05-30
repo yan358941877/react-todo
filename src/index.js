@@ -12,6 +12,7 @@ import configureStore from './store/configureStore'
 
 /*style*/
 import './index.css';
+import './static/font/iconfont.css'
 
 
 let initState = {}
