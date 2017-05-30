@@ -31,6 +31,12 @@ class TodoPart extends React.Component{
         const userinfo = this.props.userinfo
         queryOneDayRecord(userinfo, dateinfo,this.mapQueryResultToState)
     }
+    componentWillReceiveProps(nextProps){
+        //console.log(nextProps)
+        const dateinfo = nextProps.dateinfo
+        const userinfo = nextProps.userinfo
+        queryOneDayRecord(userinfo, dateinfo,this.mapQueryResultToState)
+    }
     mapQueryResultToState(data){
         this.setState({
             data

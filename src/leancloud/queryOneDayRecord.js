@@ -31,8 +31,14 @@ export default function (userinfo, dateinfo, onSuccess) {
     query.ascending('date')
 
     query.find().then(function (results) {
-        const data = results[0].attributes.todolist
-        onSuccess(data)
+        console.log(results)
+        if(results.length<=0 || !results[0].attributes.todolist){
+            onSuccess([])
+            return
+        }else {
+            const data = results[0].attributes.todolist
+            onSuccess(data)
+        }
     }).catch(function (error) {
         console.log(error)
     })
