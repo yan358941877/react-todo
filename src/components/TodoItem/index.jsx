@@ -77,11 +77,14 @@ class TodoItem extends React.Component {
                                 onChange={this.handleContentChange.bind(this)}
                                 ref={(input) => this.input = input}
                                 onKeyDown={this.handleEnterDown.bind(this)}
+                                defaultValue="请输入待办事项"
                             />
                             <div className="todo-operate">
                                 <input type="text"
                                     value={this.state.time}
                                     onChange={this.handleTimeChange.bind(this)}
+                                    onKeyDown={this.handleEnterDown.bind(this)}
+                                    defaultValue="请输入时间安排"
                                 />
                                 <i className={this.state.important ? 'iconfont icon-collection important' : 'iconfont icon-collection'} onClick={this.handleToggleImportant.bind(this)} />
                                 <i className="iconfont icon-empty" onClick={this.handleDeleteTodo.bind(this)} />
