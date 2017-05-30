@@ -36,11 +36,32 @@ class TodoItem extends React.Component{
             this.finishChange(event)
         }
     }
+    // 点击切换 “完成” “未完成”状态
+    handleToggleFinish(){
+        const isFinish = this.state.finish
+        
+        this.setState({
+            finish: !isFinish
+        })
+        //
+    }
+    handleToggleImportant(){
+        const isImportant = this.state.important
+        this.setState({
+            important: !isImportant
+        })
+    }
+    handleDeleteTodo(){
+        const choose = window.confirm('确认要删除该条记录?')
+        if(choose){
+            //调用父类方法更新数据库，并且将该 TodoItem 从TodoList中删除
+        }
+    }
     render(){
         const index = this.state.index
         return(
             <div className={ this.state.important? 'todo-item important' : index%2==0?'even todo-item': 'todo-item'} >
-                <i className={this.state.finish?'finish':''}/>
+                <i className={this.state.finish?'finish':''} onClick={this.handleToggleFinish.bind(this)}/>
                 <input type="text" 
                     value={this.state.content}
                     onChange={this.handleContentChange.bind(this)}
@@ -52,8 +73,8 @@ class TodoItem extends React.Component{
                         value={this.state.time}
                         onChange={this.handleTimeChange.bind(this)}
                         />
-                    <i className={this.state.important ? 'iconfont icon-collection important':'iconfont icon-collection'}/>
-                    <i className="iconfont icon-empty"/>
+                    <i className={this.state.important ? 'iconfont icon-collection important':'iconfont icon-collection'} onClick={this.handleToggleImportant.bind(this)}/>
+                    <i className="iconfont icon-empty" onClick= {this.handleDeleteTodo.bind(this)}/>
                 </div>
             </div>
         )
