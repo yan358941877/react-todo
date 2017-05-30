@@ -33,7 +33,6 @@ export default function (year, month,day,week, userid,onSuccess) {
     // 按照date的升序排序
     query.ascending('date')
     query.find().then(function (results) {
-        console.log(results)
         // console.dir(results[0].createdAt.getMonth())
         let records = new Array(32)
         results.map((item, index)=>{

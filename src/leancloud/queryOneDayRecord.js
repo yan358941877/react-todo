@@ -31,7 +31,7 @@ export default function (userinfo, dateinfo, onSuccess) {
     query.ascending('date')
 
     query.find().then(function (results) {
-        console.log(results)
+        
         if(results.length<=0 || !results[0].attributes.todolist){
             onSuccess([])
             return

@@ -87,7 +87,7 @@ class TodoPart extends React.Component{
                         handleTodoFinish={this.handleTodoFinish.bind(this)}
                         handleTodoSpecial={this.handleTodoSpecial.bind(this)}
                         handleTodoDelete={this.handleTodoDelete.bind(this)}/>
-                    : ''
+                    : <TodoList data={[]}/>
                 }
                 
             </div>
