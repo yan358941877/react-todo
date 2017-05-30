@@ -12,7 +12,8 @@ class TodoList extends React.Component{
                         return <TodoItem data={item} 
                             key={index} 
                             index={index}
-                            handleTodoFinish={this.props.handleTodoFinish}/>
+                            handleTodoFinish={this.props.handleTodoFinish}
+                            handleTodoSpecial={this.props.handleTodoSpecial}/>
                     })
                 }
             </div>

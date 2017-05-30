@@ -57,7 +57,16 @@ class TodoPart extends React.Component{
         
     }
 
-   
+    // todo 特别提示 方法
+    handleTodoSpecial(index){
+        let data = JSON.parse(JSON.stringify(this.state.data))
+        data[index].important = !data[index].important
+        // 更新数据库中的todo
+        const dateinfo = this.props.dateinfo
+        const userinfo = this.props.userinfo
+        updateTodo(data, userinfo, dateinfo, this.mapQueryResultToState)
+    }
+    
     render(){
         //console.log(this.state.data)
         return (
@@ -65,7 +74,9 @@ class TodoPart extends React.Component{
                 <TodoTitle dateinfo={this.props.dateinfo} />
                 {
                     this.state.data.length > 0
-                    ? <TodoList data={this.state.data} handleTodoFinish={this.handleTodoFinish.bind(this)}/>
+                    ? <TodoList data={this.state.data} 
+                        handleTodoFinish={this.handleTodoFinish.bind(this)}
+                        handleTodoSpecial={this.handleTodoSpecial.bind(this)}/>
                     : ''
                 }
                 

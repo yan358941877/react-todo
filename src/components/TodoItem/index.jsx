@@ -44,8 +44,10 @@ class TodoItem extends React.Component{
             finish: !isFinish
         })
     }
+    // 点击切换 “重要事项” “非重要事项” 状态
     handleToggleImportant(){
         const isImportant = this.state.important
+        this.props.handleTodoSpecial(this.state.index)
         this.setState({
             important: !isImportant
         })
