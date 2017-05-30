@@ -88,13 +88,14 @@ class Calendar extends React.Component {
         return (
             <div id="calendar">
                 <ul id="calendar-title" className="clear-fix">
-                    <li>SUN</li>
+                    
                     <li>MON</li>
                     <li>TUE</li>
                     <li>WED</li>
                     <li>THU</li>
                     <li>FRI</li>
                     <li>SAT</li>
+                    <li>SUN</li>
                 </ul>
                 <ul id="calendar-day" className="clear-fix">
                     {

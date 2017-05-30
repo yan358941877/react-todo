@@ -16,7 +16,7 @@ class TodoPage extends React.Component{
                         <CalendarPart />
                     </div>
                     <div id="todo-right" className="float-left">
-                        {/*<TodoPart />*/}
+                        <TodoPart />
                     </div>
                 </div>
             </div>

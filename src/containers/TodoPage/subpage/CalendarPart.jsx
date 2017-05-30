@@ -84,7 +84,7 @@ class CalendarPart extends React.Component {
 
         // 对redux中的state进行操作
         this.props.dateinfo_operate.updateCheckedDate({
-            year, month, day
+            year, month, day, week
         })
         // 更新自己的state
         this.setState({

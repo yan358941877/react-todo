@@ -24,7 +24,7 @@ class App extends React.Component {
         const month = date.getMonth()+1
         const day = date.getDate()
         const week = date.getDay()
-        this.props.dateinfo_operator.updateCheckedDate({year, month, day})
+        this.props.dateinfo_operator.updateCheckedDate({year, month, day,week})
         
         const username = localStorage.getItem('username')
         const userID = localStorage.getItem('userID')
