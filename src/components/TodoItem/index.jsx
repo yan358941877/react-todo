@@ -39,11 +39,10 @@ class TodoItem extends React.Component{
     // 点击切换 “完成” “未完成”状态
     handleToggleFinish(){
         const isFinish = this.state.finish
-        
+        this.props.handleTodoFinish(this.state.index)
         this.setState({
             finish: !isFinish
         })
-        //
     }
     handleToggleImportant(){
         const isImportant = this.state.important

@@ -16,6 +16,7 @@ import TodoList from '../../../components/TodoList'
 
 /* leanCloud */
 import queryOneDayRecord from '../../../leancloud/queryOneDayRecord'
+import updateTodo from '../../../leancloud/updateTodo'
 
 class TodoPart extends React.Component{
     constructor(props){
@@ -31,6 +32,7 @@ class TodoPart extends React.Component{
         const userinfo = this.props.userinfo
         queryOneDayRecord(userinfo, dateinfo,this.mapQueryResultToState)
     }
+    // 这一方法只有在父组件更新时，才会调用，即由connect方法生成的新组件更新时，当前方法才会被调用
     componentWillReceiveProps(nextProps){
         //console.log(nextProps)
         const dateinfo = nextProps.dateinfo
@@ -42,6 +44,20 @@ class TodoPart extends React.Component{
             data
         })
     }
+
+    // todo完成方法
+    handleTodoFinish(index){
+        
+        let data = JSON.parse(JSON.stringify(this.state.data))
+        data[index].finish = !data[index].finish
+        // 更新数据库中的todo
+        const dateinfo = this.props.dateinfo
+        const userinfo = this.props.userinfo
+        updateTodo(data, userinfo, dateinfo, this.mapQueryResultToState)
+        
+    }
+
+   
     render(){
         //console.log(this.state.data)
         return (
@@ -49,7 +65,7 @@ class TodoPart extends React.Component{
                 <TodoTitle dateinfo={this.props.dateinfo} />
                 {
                     this.state.data.length > 0
-                    ? <TodoList data={this.state.data}/>
+                    ? <TodoList data={this.state.data} handleTodoFinish={this.handleTodoFinish.bind(this)}/>
                     : ''
                 }
                 
