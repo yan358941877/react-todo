@@ -36,9 +36,9 @@ class CalendarPart extends React.Component {
         const month = this.date.getMonth()+1
         const day = this.date.getDate()
         const week = this.date.getDay()
-
+        const userid = this.props.userid
         // 向服务器查询，用户在本月的哪些天都有记录，用于在Calendar上显示
-        queryMonthRecord(year, month, day, week, this.handleChangeMonthResult)
+        queryMonthRecord(year, month, day, week, userid,this.handleChangeMonthResult)
     }
    
     previousMonth() {
@@ -48,9 +48,9 @@ class CalendarPart extends React.Component {
         const month = this.date.getMonth() + 1
         const day = this.date.getDate()
         const week = this.date.getDay()
-
+        const userid = this.props.userid
         // 向服务器查询，用户在本月的哪些天都有记录，用于在Calendar上显示
-        queryMonthRecord(year, month, day, week, this.handleChangeMonthResult)
+        queryMonthRecord(year, month, day, week, userid,this.handleChangeMonthResult)
 
     }
 
@@ -61,9 +61,10 @@ class CalendarPart extends React.Component {
         const month = this.date.getMonth() + 1
         const day = this.date.getDate()
         const week = this.date.getDay()
-
+        
+        const userid = this.props.userid
         // 向服务器查询，用户在本月的哪些天都有记录，用于在Calendar上显示
-        queryMonthRecord(year, month, day, week,this.handleChangeMonthResult)
+        queryMonthRecord(year, month, day, week, userid, this.handleChangeMonthResult)
 
     }
 
@@ -124,6 +125,7 @@ class CalendarPart extends React.Component {
 // 这个组件负责修改 checkedDate
 const mapStateToProps = (state) => {
     return {
+        userid: state.userinfo.userID,
         checkedDate: state.dateinfo
     }
 }

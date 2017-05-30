@@ -13,7 +13,8 @@ class TodoList extends React.Component{
                             key={index} 
                             index={index}
                             handleTodoFinish={this.props.handleTodoFinish}
-                            handleTodoSpecial={this.props.handleTodoSpecial}/>
+                            handleTodoSpecial={this.props.handleTodoSpecial}
+                            handleTodoDelete={this.props.handleTodoDelete}/>
                     })
                 }
             </div>

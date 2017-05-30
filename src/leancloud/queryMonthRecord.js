@@ -1,6 +1,6 @@
 import AV from 'leancloud-storage'
 
-export default function (year, month,day,week,onSuccess) {
+export default function (year, month,day,week, userid,onSuccess) {
     // 设定月初时间
     let bom = new Date()
     bom.setFullYear(year)
@@ -18,10 +18,10 @@ export default function (year, month,day,week,onSuccess) {
     eom.setHours(0)
     eom.setMinutes(0)
     eom.setSeconds(0)
-
-    // 用户id
+    parseInt
+    // 用户id  
     var userQuery = new AV.Query('TodoList')
-    userQuery.equalTo('user_id', 3)
+    userQuery.equalTo('user_id', parseInt(userid))
     // 起始时间
     var startDateQuery = new AV.Query('TodoList');
     startDateQuery.greaterThanOrEqualTo('date', bom);
@@ -33,7 +33,7 @@ export default function (year, month,day,week,onSuccess) {
     // 按照date的升序排序
     query.ascending('date')
     query.find().then(function (results) {
-        // console.log(results)
+        console.log(results)
         // console.dir(results[0].createdAt.getMonth())
         let records = new Array(32)
         results.map((item, index)=>{

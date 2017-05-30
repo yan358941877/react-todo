@@ -67,6 +67,15 @@ class TodoPart extends React.Component{
         updateTodo(data, userinfo, dateinfo, this.mapQueryResultToState)
     }
     
+    // 删除 todo 的方法
+    handleTodoDelete(index){
+        let data = JSON.parse(JSON.stringify(this.state.data))
+        data[index].delete = !data[index].delete
+        // 更新数据库中的todo
+        const dateinfo = this.props.dateinfo
+        const userinfo = this.props.userinfo
+        updateTodo(data, userinfo, dateinfo, this.mapQueryResultToState)
+    }
     render(){
         //console.log(this.state.data)
         return (
@@ -76,7 +85,8 @@ class TodoPart extends React.Component{
                     this.state.data.length > 0
                     ? <TodoList data={this.state.data} 
                         handleTodoFinish={this.handleTodoFinish.bind(this)}
-                        handleTodoSpecial={this.handleTodoSpecial.bind(this)}/>
+                        handleTodoSpecial={this.handleTodoSpecial.bind(this)}
+                        handleTodoDelete={this.handleTodoDelete.bind(this)}/>
                     : ''
                 }
                 
