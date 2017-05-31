@@ -27,13 +27,38 @@ export default function (newData, userinfo, dateinfo, onSuccess) {
     let useridQuery = new AV.Query('TodoList')
     useridQuery.equalTo('user_id', parseInt(userinfo.userID))
 
-    var query = AV.Query.and(startDateQuery, endDateQuery,useridQuery)
+    var query = AV.Query.and(startDateQuery, endDateQuery, useridQuery)
 
     query.find().then(function (results) {
-        const todoid = results[0].id
-        var todo = AV.Object.createWithoutData('TodoList', todoid)
-        todo.set('todolist', newData)
-        todo.save()
+
+        if (results.length <= 0) {
+            // console.log(results)
+
+            // var todo = AV.Object.createWithoutData('TodoList','')
+            // // 修改属性
+            // todo.set('date', startDate)
+            // todo.set('todolist', newData)
+            // todo.set('user_id', userinfo.userID)
+            // // 保存到云端
+            // todo.save();
+            var TodoList = AV.Object.extend('TodoList');
+            // 新建对象
+            var todo = new TodoList();
+            // 设置名称
+            todo.set('date', startDate)
+            todo.set('todolist', newData)
+            todo.set('user_id', parseInt(userinfo.userID))
+            
+            // 保存到云端
+            todo.save();
+        } else {
+
+            const todoid = results[0].id
+            var todo = AV.Object.createWithoutData('TodoList', todoid)
+            todo.set('todolist', newData)
+            todo.save()
+        }
+
         onSuccess(newData)
     }).catch(function (error) {
         console.log(error)

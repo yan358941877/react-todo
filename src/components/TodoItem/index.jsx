@@ -14,7 +14,14 @@ class TodoItem extends React.Component {
             index: this.props.index,
         }
     }
-
+    componentWillMount(){
+        if(this.state.content==''||!this.state.content ||this.state.time=='' || !this.state.time){
+            this.setState({
+                content: '请输入待办事项',
+                time: '请输入时间安排'
+            })
+        }
+    }
     handleContentChange(event) {
         const value = event.target.value
         this.setState({
@@ -31,6 +38,7 @@ class TodoItem extends React.Component {
         event.target.blur()
 
         // 向服务器发送修改后的数据，对数据库中的数据进行修改
+        this.props.handleTodoUpdate(this.state.index, this.state.content, this.state.time)
     }
     handleEnterDown(event) {
         if (event.keyCode == 13) {
@@ -63,6 +71,7 @@ class TodoItem extends React.Component {
             })
         }
     }
+
     render() {
         const index = this.state.index
         return (
@@ -77,14 +86,12 @@ class TodoItem extends React.Component {
                                 onChange={this.handleContentChange.bind(this)}
                                 ref={(input) => this.input = input}
                                 onKeyDown={this.handleEnterDown.bind(this)}
-                                defaultValue="请输入待办事项"
                             />
                             <div className="todo-operate">
                                 <input type="text"
                                     value={this.state.time}
                                     onChange={this.handleTimeChange.bind(this)}
                                     onKeyDown={this.handleEnterDown.bind(this)}
-                                    defaultValue="请输入时间安排"
                                 />
                                 <i className={this.state.important ? 'iconfont icon-collection important' : 'iconfont icon-collection'} onClick={this.handleToggleImportant.bind(this)} />
                                 <i className="iconfont icon-empty" onClick={this.handleDeleteTodo.bind(this)} />

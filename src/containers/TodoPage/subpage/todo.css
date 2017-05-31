@@ -1,0 +1,10 @@
+.btn-add-todo {
+    text-align: right;
+}
+.btn-add-todo i{
+    color: rgba(255,255,255,0.5);
+    font-size: 35px;
+    display: inline-block;
+    margin: 20px 20px;
+    cursor: pointer;
+}
