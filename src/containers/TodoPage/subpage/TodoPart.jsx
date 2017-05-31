@@ -1,6 +1,7 @@
 /* module */
 import React from 'react'
 import { connect } from 'react-redux'
+import {hashHistory} from 'react-router'
 //import { bindActionCreators } from 'redux'
 
 /*style*/
@@ -106,6 +107,11 @@ class TodoPart extends React.Component {
         const userinfo = this.props.userinfo
         updateTodo(data, userinfo, dateinfo, this.mapQueryResultToState)
     }
+    // 用户退出
+    handleExit(){
+        localStorage.clear()
+        hashHistory.push('/login')
+    }
     render() {
         //console.log(this.state.data)
         return (
@@ -122,7 +128,9 @@ class TodoPart extends React.Component {
                         : <TodoList data={[]} />
                 }
                 <div className="btn-add-todo">
-                    <i className="iconfont icon-addition"
+                    <i className="iconfont icon-exit" id="btn-exit" 
+                        onClick={this.handleExit.bind(this)}/>
+                    <i className="iconfont icon-addition" id="btn-add"
                         onClick={this.handleAddTodo.bind(this)} />
                 </div>
             </div>

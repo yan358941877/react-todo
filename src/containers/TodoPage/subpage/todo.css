@@ -1,10 +1,23 @@
 .btn-add-todo {
     text-align: right;
+    position: relative;
 }
 .btn-add-todo i{
     color: rgba(255,255,255,0.5);
     font-size: 35px;
-    display: inline-block;
-    margin: 20px 20px;
     cursor: pointer;
+}
+
+#btn-add{
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+#btn-exit {
+    display: inline-block;
+    position: absolute;
+    font-size: 32px;
+    top: 20px;
+    left: 20px;
 }
