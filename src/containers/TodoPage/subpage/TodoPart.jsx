@@ -2,14 +2,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {hashHistory} from 'react-router'
-//import { bindActionCreators } from 'redux'
+import { bindActionCreators } from 'redux'
 
 /*style*/
 import './todo.css'
 
 /*ActionCreators*/
-//import * as userinfo_ActionCreator from '../../../actions/userinfo'
-import * as dateinfo_ActionCreator from '../../../actions/dateinfo'
+import * as userinfo_ActionCreator from '../../../actions/userinfo'
+import * as dateinfo_actionCreator from '../../../actions/dateinfo'
 
 /* component */
 import TodoTitle from '../../../components/TodoTitle'
@@ -95,7 +95,7 @@ class TodoPart extends React.Component {
         // 将新的data发送到服务器
         const dateinfo = this.props.dateinfo
         const userinfo = this.props.userinfo
-        addTodo(data, userinfo, dateinfo, this.mapQueryResultToState)
+        addTodo(data, userinfo, dateinfo, this.mapQueryResultToState, this.props.dateinfo_operate.updateCheckedDate)
     }
     // 更新Todo内容的方法
     handleTodoUpdate(index,content, time){
@@ -146,7 +146,7 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        //dateinfo_operate: bindActionCreators(dateinfo_actionCreator, dispatch)
+        dateinfo_operate: bindActionCreators(dateinfo_actionCreator, dispatch)
     }
 }
 

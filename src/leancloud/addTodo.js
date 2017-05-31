@@ -1,7 +1,7 @@
 import AV from 'leancloud-storage'
 
 
-export default function (newData, userinfo, dateinfo, onSuccess) {
+export default function (newData, userinfo, dateinfo, onSuccess, onSuccess02) {
     let startDate = new Date()
     startDate.setFullYear(dateinfo.year)
     startDate.setMonth(dateinfo.month - 1)
@@ -58,7 +58,7 @@ export default function (newData, userinfo, dateinfo, onSuccess) {
             todo.set('todolist', newData)
             todo.save()
         }
-
+        onSuccess02(dateinfo)
         onSuccess(newData,dateinfo)
     }).catch(function (error) {
         console.log(error)

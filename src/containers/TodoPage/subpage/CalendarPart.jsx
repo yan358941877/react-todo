@@ -40,7 +40,15 @@ class CalendarPart extends React.Component {
         // 向服务器查询，用户在本月的哪些天都有记录，用于在Calendar上显示
         queryMonthRecord(year, month, day, week, userid,this.handleChangeMonthResult)
     }
-   
+    componentWillReceiveProps(nextProps){
+        const userid = nextProps.userid
+        const year = nextProps.checkedDate.year
+        const month = nextProps.checkedDate.month
+        const day = nextProps.checkedDate.day
+        const week = nextProps.checkedDate.week
+
+        queryMonthRecord(year, month, day, week, userid,this.handleChangeMonthResult)
+    }
     previousMonth() {
         let nowMonth = this.date.getMonth()
         this.date.setMonth(nowMonth - 1)
