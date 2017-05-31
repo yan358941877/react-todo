@@ -8,7 +8,7 @@ import './todo.css'
 
 /*ActionCreators*/
 //import * as userinfo_ActionCreator from '../../../actions/userinfo'
-//import * as dateinfo_ActionCreator from '../../../actions/dateinfo'
+import * as dateinfo_ActionCreator from '../../../actions/dateinfo'
 
 /* component */
 import TodoTitle from '../../../components/TodoTitle'
@@ -137,7 +137,9 @@ const mapStateToProps = (state) => {
     }
 }
 const mapDispatchToProps = (dispatch) => {
-    return {}
+    return {
+        //dateinfo_operate: bindActionCreators(dateinfo_actionCreator, dispatch)
+    }
 }
 
 TodoPart = connect(mapStateToProps, mapDispatchToProps)(TodoPart)
