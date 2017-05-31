@@ -33,11 +33,11 @@ export default function (userinfo, dateinfo, onSuccess) {
     query.find().then(function (results) {
         
         if(results.length<=0 || !results[0].attributes.todolist){
-            onSuccess([])
+            onSuccess([],dateinfo)
             return
         }else {
             const data = results[0].attributes.todolist
-            onSuccess(data)
+            onSuccess(data, dateinfo)
         }
     }).catch(function (error) {
         console.log(error)

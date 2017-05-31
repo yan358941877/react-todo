@@ -23,7 +23,8 @@ class TodoPart extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            data: []
+            data: [],
+            dateinfo: this.props.dateinfo
         }
         this.mapQueryResultToState = this.mapQueryResultToState.bind(this)
     }
@@ -31,6 +32,7 @@ class TodoPart extends React.Component {
 
         const dateinfo = this.props.dateinfo
         const userinfo = this.props.userinfo
+
         queryOneDayRecord(userinfo, dateinfo, this.mapQueryResultToState)
     }
     // 这一方法只有在父组件更新时，才会调用，即由connect方法生成的新组件更新时，当前方法才会被调用
@@ -38,11 +40,12 @@ class TodoPart extends React.Component {
         //console.log(nextProps)
         const dateinfo = nextProps.dateinfo
         const userinfo = nextProps.userinfo
+        
         queryOneDayRecord(userinfo, dateinfo, this.mapQueryResultToState)
     }
-    mapQueryResultToState(data) {
+    mapQueryResultToState(data, dateinfo) {
         this.setState({
-            data
+            data,dateinfo
         })
     }
 
@@ -111,6 +114,7 @@ class TodoPart extends React.Component {
                 {
                     this.state.data.length > 0
                         ? <TodoList data={this.state.data}
+                            dateinfo={this.state.dateinfo}
                             handleTodoFinish={this.handleTodoFinish.bind(this)}
                             handleTodoSpecial={this.handleTodoSpecial.bind(this)}
                             handleTodoDelete={this.handleTodoDelete.bind(this)} 

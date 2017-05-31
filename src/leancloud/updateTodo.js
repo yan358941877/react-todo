@@ -34,7 +34,7 @@ export default function (newData, userinfo, dateinfo, onSuccess) {
         var todo = AV.Object.createWithoutData('TodoList', todoid)
         todo.set('todolist', newData)
         todo.save()
-        onSuccess(newData)
+        onSuccess(newData,dateinfo)
     }).catch(function (error) {
         console.log(error)
     })

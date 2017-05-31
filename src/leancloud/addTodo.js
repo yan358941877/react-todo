@@ -59,7 +59,7 @@ export default function (newData, userinfo, dateinfo, onSuccess) {
             todo.save()
         }
 
-        onSuccess(newData)
+        onSuccess(newData,dateinfo)
     }).catch(function (error) {
         console.log(error)
     })
