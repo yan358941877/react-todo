@@ -7,6 +7,7 @@ class TodoList extends React.Component{
     render(){
         const dateinfo = this.props.dateinfo
         return(
+            <div id="todo-list-container">
             <div id="todo-list">
                 {
                     this.props.data.map((item, index)=>{
@@ -20,6 +21,7 @@ class TodoList extends React.Component{
                             handleTodoUpdate={this.props.handleTodoUpdate}/>
                     })
                 }
+            </div>
             </div>
         )
     }

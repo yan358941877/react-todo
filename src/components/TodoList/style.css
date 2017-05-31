@@ -1,4 +1,14 @@
-#todo-list {
-    width: 100%;
+#todo-list-container{
     height: 480px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+#todo-list {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: -17px;
+    overflow-y: scroll;
 }
