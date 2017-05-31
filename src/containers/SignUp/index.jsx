@@ -19,6 +19,18 @@ import lcSignup from '../../leancloud/lcSignup'
 class SignUp extends React.Component{
     // 当用户提交Login表单时的处理
     handleSubmit(username, password, email){
+        if(username.length<=3){
+            alert('用户名过短，请更换用户名')
+            return
+        }
+        if(password.length<6){
+            alert('密码过短，请更换密码')
+            return
+        }
+        if(email.search(/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/) < 0){
+            alert('邮箱格式错误，请重新输入')
+            return
+        }
         const handleSignupSuccess = this.handleSignupSuccess.bind(this)
         lcSignup(username, password, email,handleSignupSuccess)
     }
