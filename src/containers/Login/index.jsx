@@ -13,7 +13,7 @@ import LoginForm from '../../components/LoginForm'
 /* ActionCreator */
 import * as userinfo_actionCreator from '../../actions/userinfo'
 /*leanCloud*/
-import saveTestObject from '../../leancloud/saveTestObject'
+
 import lcLogin from '../../leancloud/lcLogin'
 
 class Login extends React.Component{

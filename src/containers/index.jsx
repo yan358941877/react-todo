@@ -11,7 +11,6 @@ import * as dateinfo_actionCreator from '../actions/dateinfo'
 import './style.css'
 /*LeanCloud*/
 import initLeanCloud from '../leancloud/initLeanCloud'
-import goujian from '../leancloud/goujian'
 class App extends React.Component {
 
     // 当最外层组件加载完毕之前，在localStorage中查找是否有用户名，如果有进入todo应用，否则进入登录页面

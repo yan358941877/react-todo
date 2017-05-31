@@ -6,7 +6,7 @@ export default function(year, month){
         return num[month-1]
     }
 
-    if(year%4==0&&year%100!==0||year%400==0){
+    if((year%4===0&&year%100!==0)||year%400===0){
         return num[1]+1
     }else {
         return num[1]

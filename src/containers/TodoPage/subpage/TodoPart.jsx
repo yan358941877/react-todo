@@ -1,14 +1,14 @@
 /* module */
 import React from 'react'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+//import { bindActionCreators } from 'redux'
 
 /*style*/
 import './todo.css'
 
 /*ActionCreators*/
-import * as userinfo_ActionCreator from '../../../actions/userinfo'
-import * as dateinfo_ActionCreator from '../../../actions/dateinfo'
+//import * as userinfo_ActionCreator from '../../../actions/userinfo'
+//import * as dateinfo_ActionCreator from '../../../actions/dateinfo'
 
 /* component */
 import TodoTitle from '../../../components/TodoTitle'

@@ -1,6 +1,6 @@
 /*module*/
 import React from 'react'
-import {Router, Route, hashHistory, IndexRoute} from 'react-router'
+import {Router, Route, hashHistory} from 'react-router'
 
 /*container and components*/
 import App from '../containers'

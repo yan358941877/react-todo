@@ -1,4 +1,4 @@
-import AV from 'leancloud-storage'
+
 
 function handleError(error){
     const stateCode = error.code
