@@ -45,6 +45,7 @@ export default function (newData, userinfo, dateinfo, onSuccess, onSuccess02) {
             // 新建对象
             var todo = new TodoList();
             // 设置名称
+            startDate.setHours(1)
             todo.set('date', startDate)
             todo.set('todolist', newData)
             todo.set('user_id', parseInt(userinfo.userID))
