@@ -1,6 +1,6 @@
 ## Days Todo(web版Todo应用)
 
-这段时间一直在学习React相关内容，最近我用react相关技术实现了一个最经典的React项目--Todo应用。我尽我最大的努力实现了我想到的功能。这是我的Github项目地址: [https://github.com/yan358941877/react-todo](https://github.com/yan358941877/react-todo)  
+这段时间一直在学习React相关内容，最近我用react相关技术实现了一个最经典的React项目--Todo应用。我尽我最大的努力实现了我想到的功能，尽管还有些小瑕疵。这是我的Github项目地址: [https://github.com/yan358941877/react-todo](https://github.com/yan358941877/react-todo)  
 欢迎`issue`,`star` or `follow`!我会继续开源更多有趣的项目
 
 ## 地址
